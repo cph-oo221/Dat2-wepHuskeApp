@@ -14,25 +14,32 @@ public class AppStart implements ServletContextListener
     public void contextInitialized(ServletContextEvent sce)
     {
       //  ServletContextListener.super.contextInitialized(sce);
-        List<Person> personList = new ArrayList<>();
-
-        Person person = new Person("Oskar", "123", "bamse", "is", "pude" );
-        Person person1 = new Person("Lars", "1234", "tun", "øl", "gaffatape" );
-        Person person2 = new Person("Peter", "12345", "pløkker", "vodka" );
-        Person person3 = new Person("Bob", "123456", "Vand", "gril" );
-
-        personList.add(person);
-        personList.add(person1);
-        personList.add(person2);
-        personList.add(person3);
-
-        personMap = new TreeMap<>();
-
-        for (Person element : personList)
+        try
         {
-            personMap.put(element.getNavn(), element);
+            List<Person> personList = new ArrayList<>();
+
+            Person person = new Person("Oskar", "123", "bamse", "is", "pude" );
+            Person person1 = new Person("Lars", "1234", "tun", "øl", "gaffatape" );
+            Person person2 = new Person("Peter", "12345", "pløkker", "vodka" );
+            Person person3 = new Person("Bob", "123456", "Vand", "gril" );
+
+            personList.add(person);
+            personList.add(person1);
+            personList.add(person2);
+            personList.add(person3);
+
+            personMap = new TreeMap<>();
+
+            for (Person element : personList)
+            {
+                personMap.put(element.getNavn(), element);
+            }
+            // sce.getServletContext().setAttribute("personer", personMap);
         }
-        // sce.getServletContext().setAttribute("personer", personMap);
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public static Map<String, Person> getPersonMap()
