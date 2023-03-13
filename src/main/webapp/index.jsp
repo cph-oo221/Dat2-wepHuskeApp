@@ -14,7 +14,6 @@
 <c:forEach var="emne" items="${requestScope.personer}">
     <br/>
     <p>${emne.value.navn}</p>
-
 </c:forEach>
 
 
