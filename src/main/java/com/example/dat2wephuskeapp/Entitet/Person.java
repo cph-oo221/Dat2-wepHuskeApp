@@ -16,8 +16,8 @@ public class Person
         this.kode = kode;
 
         this.stringArrayList = Arrays.asList(s);
-//        String [] strings = s.split(",");
-//        this.stringArrayList = new ArrayList<>(Arrays.asList(strings));
+        // String [] strings = s.split(",");
+        // this.stringArrayList = new ArrayList<>(Arrays.asList(strings));
     }
 
 
