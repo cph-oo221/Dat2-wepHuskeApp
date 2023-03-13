@@ -14,7 +14,6 @@ public class AppStart implements ServletContextListener
     public void contextInitialized(ServletContextEvent sce)
     {
         //  ServletContextListener.super.contextInitialized(sce);
-
         List<Person> personList = new ArrayList<>();
 
         Person person = new Person("Oskar", "123", "bamse", "is", "pude");
@@ -26,7 +25,7 @@ public class AppStart implements ServletContextListener
         personList.add(person1);
         personList.add(person2);
         personList.add(person3);
-
+        
         personMap = new TreeMap<>();
 
         for (Person element : personList)
@@ -34,7 +33,6 @@ public class AppStart implements ServletContextListener
             personMap.put(element.getNavn(), element);
         }
         // sce.getServletContext().setAttribute("personer", personMap);
-
     }
 
     public static Map<String, Person> getPersonMap()
