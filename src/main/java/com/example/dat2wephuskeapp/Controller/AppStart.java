@@ -32,7 +32,6 @@ public class AppStart implements ServletContextListener
         {
             personMap.put(element.getNavn(), element);
         }
-
         // sce.getServletContext().setAttribute("personer", personMap);
     }
 
