@@ -19,6 +19,7 @@ public class RemoveItemServlet extends HttpServlet
 
         person.getStringArrayList().remove(itemRemove);
 
+        // SOUT FOR DEBUGGING. TODO REMOVE LATER - LINE 22-24.
         System.out.println("itemRemove = " + itemRemove);
         System.out.println(person.getStringArrayList());
 

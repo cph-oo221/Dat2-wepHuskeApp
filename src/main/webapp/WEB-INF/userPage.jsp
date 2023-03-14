@@ -18,15 +18,17 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+<%-- BANNER & TITEL --%>
 <div class="text-center text-white mt-3 p-5 bg-primary rounded">
     <h1>User overview for ${sessionScope.bruger.navn}</h1>
 </div>
 
+<%--  UPDATE MSG  --%>
 <div class="mt-1 mb-1">
     <h3>${requestScope.msg}</h3>
 </div>
 
-
+<%-- ADD ITEM TO THE TODO LIST --%>
 <div class="text-center mt-4">
     <form action="AddItemServlet">
         <label> <b> Add new item </b> </label> <br/>
@@ -35,7 +37,7 @@
     </form>
 </div>
 
-
+<%-- SORT LIST IN ALPHABET ORDER--%>
 <div class="text-end mt-2">
     <form action="SortItemListServlet">
         <input type="submit" class="btn btn-primary" value="Sort - abc">
@@ -43,7 +45,7 @@
 </div>
 
 
-
+<%--  ITEM LIST WITH REMOVE  --%>
 <table class="table table-dark table-striped">
     <tr>
         <th>TO-DO list:</th>
@@ -64,35 +66,18 @@
     </c:forEach>
 </table>
 
-
+<%--  SAVE CHANGE TO THE ITEM LIST  --%>
 <div class="mb-3">
     <form action="SaveServlet">
         <input type="submit" class="btn btn-primary" value="Save">
     </form>
 </div>
 
+<%--  LOGOUT BUTTON  --%>
 <div class="mb-3">
     <form action="logoutServlet" method="post">
         <input type="submit" class="btn btn-primary" value="Logout">
     </form>
 </div>
-
-<%--<div class="row">
-    <div class="col-6">
-        <div class="mb-3">
-            <form action="SaveServlet">
-                <input type="submit" class="btn btn-primary" value="Save">
-            </form>
-        </div>
-    </div>
-
-    <div class="col-12">
-        <div class="mb-3">
-            <form action="logoutServlet" method="post">
-                <input type="submit" class="btn btn-primary" value="Logout">
-            </form>
-        </div>
-    </div>
-</div>--%>
 </body>
 </html>

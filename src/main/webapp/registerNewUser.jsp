@@ -17,15 +17,17 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+<%-- BANNER & TITEL FOR REGISTER A NEW USER--%>
 <div class="text-center text-white mt-3 p-5 bg-primary rounded">
     <h1>Register New User</h1>
 </div>
 
-
+<%-- TODO REMOVE THIS VVV  --%>
 <div class="mt-1">
     <p></p>
 </div>
 
+<%-- ADD A NEW PERSON --%>
 <div class="text-center mt-3">
     <form action="AddPersonServlet">
         <br/>
