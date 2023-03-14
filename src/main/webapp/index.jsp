@@ -4,7 +4,6 @@
 <html>
 <head>
     <title>Main page</title>
-    <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -12,41 +11,31 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-
-
-
 <div class="text-center text-white mt-3 p-5 bg-primary rounded">
     <h1>Main Page</h1>
 </div>
 
-<br/>
-<br/>
-<br/>
-<a href="LoginServlet">Login</a>
+<p>${requestScope.errorMSG}</p>
 
-<c:forEach var="emne" items="${requestScope.personer}">
-    <br/>
-    <p>${emne.value.navn}</p>
-</c:forEach>
+<div class="text-center mt-3">
+    <form action="LoginServlet">
+        <br/>
+        <label for="name"> <b> Skriv dit navn: </b> </label><br>
+        <input type="text" id="name" name="name" placeholder="Username"><br>
 
+        <label for="password"> <b> Skriv din kode: </b> </label><br>
+        <input type="password" id="password" name="password" placeholder="Password"><br>
+        <br/>
 
-<form action="GetPersonServlet">
-    <label>write name of person you want</label> <br/>
-    <input type="text" name="name">
-    <input type="submit" value="submit">
-</form>
-
-<div>
-    <p>Name: ${requestScope.getPerson.navn}</p> <br/>
-    <p>Password: ${requestScope.getPerson.kode}</p> <br/>
-    <p>List: </p>
-    <c:forEach var="emnelist" items="${requestScope.getPerson.stringArrayList}">
-        <ol>
-            <li>${emnelist}</li>
-        </ol>
-    </c:forEach>
+        <input type="submit" class="btn btn-primary" value="Enter">
+    </form>
 </div>
 
+<div class="text-center mt-3">
+    <form action="LoginServlet" method="post">
+        <input type="submit" class="btn btn-link" value="Register new user">
+    </form>
+</div>
 
 </body>
 </html>

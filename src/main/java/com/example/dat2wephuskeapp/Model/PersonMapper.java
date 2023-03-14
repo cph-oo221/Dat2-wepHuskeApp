@@ -17,9 +17,9 @@ public class PersonMapper
         return AppStart.getPersonMap().get(navn);
     }
 
-    protected static void addPerson(Person person)
+    protected static Person addPerson(Person person)
     {
-        AppStart.getPersonMap().put(person.getNavn(), person);
+        return AppStart.getPersonMap().put(person.getNavn(), person);
     }
 
     protected static void removePerson(String navn)

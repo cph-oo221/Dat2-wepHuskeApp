@@ -16,9 +16,9 @@ public class Facade
         return PersonMapper.getPerson(navn);
     }
 
-    public static void addPerson(Person person)
+    public static Person addPerson(Person person)
     {
-        PersonMapper.addPerson(person);
+        return PersonMapper.addPerson(person);
     }
 
     public static void removePerson(String navn)
@@ -30,4 +30,5 @@ public class Facade
     {
         PersonMapper.updatePerson(person); // todo make a update person method in PersonMapper
     }
+
 }
