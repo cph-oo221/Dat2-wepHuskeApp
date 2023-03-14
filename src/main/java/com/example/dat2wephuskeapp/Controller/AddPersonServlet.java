@@ -21,7 +21,6 @@ public class AddPersonServlet extends HttpServlet
         Map<String, Person> personMap = Facade.getAllperson();
         request.setAttribute("personer", personMap);
 
-
         Person person = new Person(name, password);
         request.setAttribute("addPerson", Facade.addPerson(person));
 
@@ -34,6 +33,5 @@ public class AddPersonServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-
     }
 }
