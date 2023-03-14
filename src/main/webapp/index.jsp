@@ -11,8 +11,9 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="text-center text-white mt-3 p-5 bg-primary rounded">
+<div class="text-center text-white mt-3 p-4 bg-primary rounded">
     <h1><b> Main Page </b></h1>
+    <br/>
     <h4><b> - Welcome to the TODO List</b></h4>
 </div>
 
