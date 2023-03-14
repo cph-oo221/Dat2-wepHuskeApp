@@ -38,7 +38,7 @@
 </div>
 
 <%-- SORT LIST IN ALPHABET ORDER--%>
-<div class="text-end mt-2">
+<div class="text-start mt-2">
     <form action="SortItemListServlet">
         <input type="submit" class="btn btn-primary" value="Sort - abc">
     </form>
