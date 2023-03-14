@@ -27,7 +27,7 @@
 </div>
 
 
-<div class="text-center mb-3">
+<div class="text-center mt-4">
     <form action="AddItemServlet">
         <label> <b> Add new item </b> </label> <br/>
         <input type="text" name="item" placeholder="New item">
@@ -36,35 +36,48 @@
 </div>
 
 
+<div class="text-end mt-2">
+    <form action="SortItemListServlet">
+        <input type="submit" class="btn btn-primary" value="Sort - abc">
+    </form>
+</div>
+
+
+
 <table class="table table-dark table-striped">
     <tr>
         <th>TO-DO list:</th>
-        <!-- <th> </th> -->
+        <th>Remove</th>
     </tr>
 
     <c:forEach var="emne" items="${sessionScope.bruger.stringArrayList}">
         <tr>
-            <td>${emne}</td>
+            <td><b> ${emne} </b></td>
+
+            <td>
+                <form action="RemoveItemServlet">
+                    <input type="hidden" name="itemRemove" value="${emne}">
+                    <input type="submit" class="btn btn-primary" value="Remove">
+                </form>
+            </td>
         </tr>
     </c:forEach>
 </table>
 
 
-<%--<div class="mb-3">--%>
-<%--    <form action="SaveServlet">--%>
-<%--        <input type="submit" class="btn btn-primary" value="Save">--%>
-<%--    </form>--%>
-<%--</div>--%>
+<div class="mb-3">
+    <form action="SaveServlet">
+        <input type="submit" class="btn btn-primary" value="Save">
+    </form>
+</div>
 
-<%--<div class="mb-3">--%>
-<%--    <form action="logoutServlet" method="post">--%>
-<%--        <input type="submit" class="btn btn-primary" value="Logout">--%>
-<%--    </form>--%>
-<%--</div>--%>
+<div class="mb-3">
+    <form action="logoutServlet" method="post">
+        <input type="submit" class="btn btn-primary" value="Logout">
+    </form>
+</div>
 
-
-
-<div class="row">
+<%--<div class="row">
     <div class="col-6">
         <div class="mb-3">
             <form action="SaveServlet">
@@ -73,14 +86,13 @@
         </div>
     </div>
 
-    <div class="col-6">
+    <div class="col-12">
         <div class="mb-3">
             <form action="logoutServlet" method="post">
                 <input type="submit" class="btn btn-primary" value="Logout">
             </form>
         </div>
     </div>
-</div>
-
+</div>--%>
 </body>
 </html>

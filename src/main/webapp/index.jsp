@@ -13,17 +13,20 @@
 <body>
 <div class="text-center text-white mt-3 p-5 bg-primary rounded">
     <h1><b> Main Page </b></h1>
+    <h4><b> - Welcome to the TODO List</b></h4>
 </div>
 
-<p class="text-red">${requestScope.errorMSG}</p>
+<div class="mt-2 text-danger">
+    <p>${requestScope.errorMSG}</p>
+</div>
 
 <div class="text-center mt-3">
     <form action="LoginServlet" method="post">
         <br/>
-        <label for="name"> <b> Skriv dit navn: </b> </label><br>
-        <input type="text" id="name" name="name" placeholder="Username"><br>
+        <label for="name" class="text-end"> <b> Login </b> </label><br>
+        <input type="text" id="name" name="name" placeholder="Username"><br><br>
 
-        <label for="password"> <b> Skriv din kode: </b> </label><br>
+        <label for="password"> <b>  </b> </label><br>
         <input type="password" id="password" name="password" placeholder="Password"><br>
         <br/>
         <input type="submit" class="btn btn-primary" value="Enter">
@@ -32,7 +35,8 @@
 
 <div class="text-center mt-3">
     <form action="LoginServlet" method="get">
-        <input type="submit" class="btn btn-link" value="Register new user">
+        <%--  style="text-decoration: none" <- this removes the line under a link/button     --%>
+        <input type="submit" class="btn btn-link" style="text-decoration: none" value="Register new user">
     </form>
 </div>
 </body>
