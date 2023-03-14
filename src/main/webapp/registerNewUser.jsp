@@ -21,6 +21,11 @@
     <h1>Register New User</h1>
 </div>
 
+
+<div class="mt-1">
+    <p></p>
+</div>
+
 <div class="text-center mt-3">
     <form action="AddPersonServlet">
         <br/>

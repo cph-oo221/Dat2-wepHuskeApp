@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Map;
 
 @WebServlet(name = "AddPersonServlet", value = "/AddPersonServlet")
@@ -18,14 +19,11 @@ public class AddPersonServlet extends HttpServlet
         String name = request.getParameter("name");
         String password = request.getParameter("password");
 
-        Map<String, Person> personMap = Facade.getAllperson();
-        request.setAttribute("personer", personMap);
-
-        Person person = new Person(name, password);
-        request.setAttribute("addPerson", Facade.addPerson(person));
+        Facade.addPerson(new Person(name, password));
 
         HttpSession session = request.getSession();
-        session.setAttribute("bruger", personMap.get(name));
+
+        session.setAttribute("bruger", Facade.getPerson(name));
 
         request.getRequestDispatcher("WEB-INF/userPage.jsp").forward(request, response);
     }

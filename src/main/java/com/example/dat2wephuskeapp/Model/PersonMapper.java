@@ -31,7 +31,6 @@ public class PersonMapper
     protected static Person getPerson(String navn)
     {
         return copyPerson(personMap.getOrDefault(navn, null));
-
         // return personMap.get(navn);
     }
 

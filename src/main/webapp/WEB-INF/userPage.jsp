@@ -27,29 +27,8 @@
 </div>
 
 
-<%--
-// get person
-
-<form action="GetPersonServlet">
-    <label>write name of person you want</label> <br/>
-    <input type="text" name="name">
-    <input type="submit" value="submit">
-</form>
-
-<div>
-    <p>Name: ${requestScope.getPerson.navn}</p> <br/>
-    <p>Password: ${requestScope.getPerson.kode}</p> <br/>
-    <p>List: </p>
-    <c:forEach var="emnelist" items="${requestScope.getPerson.stringArrayList}">
-        <ol>
-            <li>${emnelist}</li>
-        </ol>
-    </c:forEach>
-</div>--%>
-
-
 <div class="text-center mb-3">
-    <form action="AddItemServlet" method="post">
+    <form action="AddItemServlet">
         <label> <b> Add new item </b> </label> <br/>
         <input type="text" name="item" placeholder="New item">
         <input type="submit" class="btn btn-primary" value="submit">
