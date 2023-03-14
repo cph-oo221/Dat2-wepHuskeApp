@@ -9,19 +9,20 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.Map;
 
-@WebServlet(name = "LoginServlet", value = "/LoginServlet")
-public class LoginServlet extends HttpServlet
+@WebServlet(name = "GetPersonServlet", value = "/GetPersonServlet")
+public class GetPersonServlet extends HttpServlet
 {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        Map<String, Person> personMap = Facade.getAllperson();
-        request.setAttribute("personer", personMap);
+        String name = request.getParameter("name");
+        request.setAttribute("getPerson", Facade.getPerson(name));
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+
     }
 }

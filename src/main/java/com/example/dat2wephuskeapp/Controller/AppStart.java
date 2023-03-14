@@ -25,7 +25,7 @@ public class AppStart implements ServletContextListener
         personList.add(person1);
         personList.add(person2);
         personList.add(person3);
-        
+
         personMap = new TreeMap<>();
 
         for (Person element : personList)
