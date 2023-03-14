@@ -18,7 +18,7 @@
 <p>${requestScope.errorMSG}</p>
 
 <div class="text-center mt-3">
-    <form action="LoginServlet">
+    <form action="LoginServlet" method="post">
         <br/>
         <label for="name"> <b> Skriv dit navn: </b> </label><br>
         <input type="text" id="name" name="name" placeholder="Username"><br>
@@ -31,7 +31,7 @@
 </div>
 
 <div class="text-center mt-3">
-    <form action="LoginServlet" method="post">
+    <form action="LoginServlet" method="get">
         <input type="submit" class="btn btn-link" value="Register new user">
     </form>
 </div>

@@ -31,4 +31,8 @@ public class Facade
         PersonMapper.updatePerson(person); // todo make a update person method in PersonMapper
     }
 
+    public static String savePerson(Person person)
+    {
+        return PersonMapper.savePerson(person);
+    }
 }

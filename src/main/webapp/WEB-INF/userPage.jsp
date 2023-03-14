@@ -6,9 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>${sessionScope.bruger.navn}</title>
+    <title>${sessionScope.bruger.navn}'s page</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -18,9 +19,12 @@
 </head>
 <body>
 <div class="text-center text-white mt-3 p-5 bg-primary rounded">
-    <h1>User over view for ${sessionScope.bruger.navn}</h1>
+    <h1>User overview for ${sessionScope.bruger.navn}</h1>
 </div>
 
+<div class="mt-1 mb-1">
+    <h3>${requestScope.msg}</h3>
+</div>
 
 
 <%--
@@ -42,6 +46,43 @@
         </ol>
     </c:forEach>
 </div>--%>
+
+
+<div class="text-center mb-3">
+    <form action="AddItemServlet" method="post">
+        <label> <b> Add new item </b> </label> <br/>
+        <input type="text" name="item" placeholder="New item">
+        <input type="submit" class="btn btn-primary" value="submit">
+    </form>
+</div>
+
+
+
+<table class="table table-dark table-striped">
+    <tr>
+        <th>TO-DO list: </th>
+        <!-- <th> </th> -->
+    </tr>
+
+    <c:forEach var="emne" items="${sessionScope.bruger.stringArrayList}">
+        <tr>
+            <td>${emne}</td>
+        </tr>
+    </c:forEach>
+</table>
+
+<div class="mb-3">
+    <form action="SaveServlet">
+        <input type="submit" class="btn btn-primary" value="Save">
+    </form>
+</div>
+
+<div class="mb-3">
+    <form action="logoutServlet" method="post">
+        <input type="submit" class="btn btn-primary" value="Logout">
+    </form>
+</div>
+
 
 </body>
 </html>

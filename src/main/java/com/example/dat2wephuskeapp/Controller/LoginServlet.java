@@ -15,7 +15,13 @@ public class LoginServlet extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        Map<String, Person> personMap = Facade.getAllperson();
+        request.getRequestDispatcher("registerNewUser.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        /*Map<String, Person> personMap = Facade.getAllperson();
         request.setAttribute("personer", personMap);
 
         String name = request.getParameter("name");
@@ -34,14 +40,34 @@ public class LoginServlet extends HttpServlet
         }
 
         HttpSession session = request.getSession();
+
         session.setAttribute("bruger", personMap.get(name));
 
-        request.getRequestDispatcher("WEB-INF/userPage.jsp").forward(request, response);
-    }
+        request.getRequestDispatcher("WEB-INF/userPage.jsp").forward(request, response);*/
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {
-        request.getRequestDispatcher("registerNewUser.jsp").forward(request, response);
+        String name = request.getParameter("name");
+        String password = request.getParameter("password");
+        String errorMSG = "Error: Your password or username is incorrect";
+        System.out.println("input: " + name + " " + password);
+
+        Person person = Facade.getPerson(name);
+
+        if (person == null)
+        {
+            request.setAttribute("errorMSG", errorMSG);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+
+        if (!person.getKode().equals(password))
+        {
+            request.setAttribute("errorMSG", errorMSG);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+
+        HttpSession session = request.getSession();
+
+        session.setAttribute("bruger", person);
+
+        request.getRequestDispatcher("WEB-INF/userPage.jsp").forward(request, response);
     }
 }

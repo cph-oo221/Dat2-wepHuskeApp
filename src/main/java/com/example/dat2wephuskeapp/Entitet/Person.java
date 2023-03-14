@@ -1,5 +1,6 @@
 package com.example.dat2wephuskeapp.Entitet;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,6 +21,13 @@ public class Person
         // NB: Vhange parameter to String s
         // String [] strings = s.split(",");
         // this.stringArrayList = new ArrayList<>(Arrays.asList(strings));
+    }
+
+    public Person(String navn, String kode, List<String> stringArrayList)
+    {
+        this.navn = navn;
+        this.kode = kode;
+        this.stringArrayList = new ArrayList<>(stringArrayList);
     }
 
     public List<String> getStringArrayList()
