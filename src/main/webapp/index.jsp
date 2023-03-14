@@ -10,6 +10,7 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
     <%--<link rel="stylesheet" href="WEB-INF/CSS/Styles.css">--%>
+    <link rel="icon" href="favicon/favicon1.png">
 </head>
 <body>
 <%-- BANNER & TITEL + ONE LINER --%>
