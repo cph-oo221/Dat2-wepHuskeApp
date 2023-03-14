@@ -12,10 +12,10 @@
 </head>
 <body>
 <div class="text-center text-white mt-3 p-5 bg-primary rounded">
-    <h1>Main Page</h1>
+    <h1><b> Main Page </b></h1>
 </div>
 
-<p>${requestScope.errorMSG}</p>
+<p class="text-red">${requestScope.errorMSG}</p>
 
 <div class="text-center mt-3">
     <form action="LoginServlet" method="post">
@@ -35,6 +35,5 @@
         <input type="submit" class="btn btn-link" value="Register new user">
     </form>
 </div>
-
 </body>
 </html>

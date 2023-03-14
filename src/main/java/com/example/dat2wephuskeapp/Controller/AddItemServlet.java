@@ -18,11 +18,6 @@ public class AddItemServlet extends HttpServlet
 
         Person person = (Person) request.getSession().getAttribute("bruger");
 
-        /*if(person.getStringArrayList() == null)
-        {
-            person.setStringArrayList(new ArrayList<>());
-        }*/
-
         person.getStringArrayList().add(item);
 
         request.getRequestDispatcher("WEB-INF/userPage.jsp").forward(request, response);

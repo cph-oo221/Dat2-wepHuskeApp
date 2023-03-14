@@ -36,10 +36,9 @@
 </div>
 
 
-
 <table class="table table-dark table-striped">
     <tr>
-        <th>TO-DO list: </th>
+        <th>TO-DO list:</th>
         <!-- <th> </th> -->
     </tr>
 
@@ -50,18 +49,38 @@
     </c:forEach>
 </table>
 
-<div class="mb-3">
-    <form action="SaveServlet">
-        <input type="submit" class="btn btn-primary" value="Save">
-    </form>
-</div>
 
-<div class="mb-3">
-    <form action="logoutServlet" method="post">
-        <input type="submit" class="btn btn-primary" value="Logout">
-    </form>
-</div>
+<%--<div class="mb-3">--%>
+<%--    <form action="SaveServlet">--%>
+<%--        <input type="submit" class="btn btn-primary" value="Save">--%>
+<%--    </form>--%>
+<%--</div>--%>
 
+<%--<div class="mb-3">--%>
+<%--    <form action="logoutServlet" method="post">--%>
+<%--        <input type="submit" class="btn btn-primary" value="Logout">--%>
+<%--    </form>--%>
+<%--</div>--%>
+
+
+
+<div class="row">
+    <div class="col-6">
+        <div class="mb-3">
+            <form action="SaveServlet">
+                <input type="submit" class="btn btn-primary" value="Save">
+            </form>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="mb-3">
+            <form action="logoutServlet" method="post">
+                <input type="submit" class="btn btn-primary" value="Logout">
+            </form>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
