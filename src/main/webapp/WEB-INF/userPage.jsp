@@ -16,68 +16,97 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/Styles.css">
 </head>
 <body>
-<%-- BANNER & TITEL --%>
-<div class="text-center text-white mt-3 p-5 bg-primary rounded">
-    <h1>User overview for ${sessionScope.bruger.navn}</h1>
-</div>
 
-<%--  UPDATE MSG  --%>
-<div class="mt-1 mb-1">
-    <h3>${requestScope.msg}</h3>
-</div>
+    <%-- BANNER & TITEL --%>
+    <div class="text-center text-white mt-3 p-5 bg-primary rounded">
+        <h1>User overview for ${sessionScope.bruger.navn}</h1>
+    </div>
 
-<%-- ADD ITEM TO THE TODO LIST --%>
-<div class="text-center mt-4">
-    <form action="AddItemServlet">
-        <label> <b> Add new item </b> </label> <br/>
-        <input type="text" name="item" placeholder="New item">
-        <input type="submit" class="btn btn-primary" value="submit">
-    </form>
-</div>
+    <%--  UPDATE MSG  --%>
+    <div class="mt-1 mb-1">
+        <h3>${requestScope.msg}</h3>
+    </div>
 
-<%-- SORT LIST IN ALPHABET ORDER--%>
-<div class="text-start mt-2">
-    <form action="SortItemListServlet">
-        <input type="submit" class="btn btn-primary" value="Sort - abc">
-    </form>
-</div>
+    <%-- ADD ITEM TO THE TODO LIST --%>
+    <div class="text-center mt-4">
+        <form action="AddItemServlet">
+            <label class="fw-bold">Add new item</label> <br/>
+            <input type="text" name="item" placeholder="New item">
+
+            <input type="submit" class="btn btn-primary b-4" value="Add">
+        </form>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <%-- SORT LIST IN ALPHABET ORDER--%>
+                <div class="text-center mt-3">
+                    <form action="SortItemListServlet">
+                        <input type="submit" class="btn btn-primary" value="Sort - abc">
+                    </form>
+                </div>
+            </div>
+
+            <div class="col">
+                <%--  SAVE CHANGE TO THE ITEM LIST  --%>
+                <div class="text-center mt-3">
+                    <form action="SaveServlet">
+                        <input type="submit" class="btn btn-primary" value="Save">
+                    </form>
+                </div>
+            </div>
+
+            <div class="col">
+                <%--  LOGOUT BUTTON  --%>
+                <div class="text-center mt-3">
+                    <form action="logoutServlet" method="post">
+                        <input type="submit" class="btn btn-primary" value="Logout">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-<%--  ITEM LIST WITH REMOVE  --%>
-<table class="table table-dark table-striped">
-    <tr>
-        <th>TO-DO list:</th>
-        <th>Remove</th>
-    </tr>
 
-    <c:forEach var="emne" items="${sessionScope.bruger.stringArrayList}">
+    <%--  ITEM LIST WITH REMOVE  --%>
+    <table class="table table-dark table-striped">
         <tr>
-            <td><b> ${emne} </b></td>
-
-            <td>
-                <form action="RemoveItemServlet">
-                    <input type="hidden" name="itemRemove" value="${emne}">
-                    <input type="submit" class="btn btn-primary" value="Remove">
-                </form>
-            </td>
+            <th>TO-DO list:</th>
+            <th>Remove</th>
         </tr>
-    </c:forEach>
-</table>
 
-<%--  SAVE CHANGE TO THE ITEM LIST  --%>
-<div class="mb-3">
-    <form action="SaveServlet">
-        <input type="submit" class="btn btn-primary" value="Save">
-    </form>
-</div>
+        <c:forEach var="emne" items="${sessionScope.bruger.stringArrayList}">
+            <tr>
+                <td><b> ${emne} </b></td>
 
-<%--  LOGOUT BUTTON  --%>
-<div class="mb-3">
-    <form action="logoutServlet" method="post">
-        <input type="submit" class="btn btn-primary" value="Logout">
-    </form>
-</div>
+                <td>
+                    <form action="RemoveItemServlet">
+                        <input type="hidden" name="itemRemove" value="${emne}">
+                        <input type="submit" class="btn btn-primary" value="Remove">
+                    </form>
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
+
+    <%--&lt;%&ndash;  SAVE CHANGE TO THE ITEM LIST  &ndash;%&gt;--%>
+    <%--<div class="mb-3">--%>
+    <%--    <form action="SaveServlet">--%>
+    <%--        <input type="submit" class="btn btn-primary" value="Save">--%>
+    <%--    </form>--%>
+    <%--</div>--%>
+
+    <%--&lt;%&ndash;  LOGOUT BUTTON  &ndash;%&gt;--%>
+    <%--<div class="mb-3">--%>
+    <%--    <form action="logoutServlet" method="post">--%>
+    <%--        <input type="submit" class="btn btn-primary" value="Logout">--%>
+    <%--    </form>--%>
+    <%--</div>--%>
+
 </body>
 </html>

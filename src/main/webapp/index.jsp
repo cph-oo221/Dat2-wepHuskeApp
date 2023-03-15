@@ -10,7 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
-    <%--<link rel="stylesheet" href="WEB-INF/CSS/Styles.css">--%>
 </head>
 <body>
 <%-- BANNER & TITEL + ONE LINER --%>
@@ -29,11 +28,11 @@
 <div class="text-center mt-3">
     <br/>
     <div class="EnterUserAndPass">
-        <p><b> Enter username & password </b></p>
+        <p class="fw-bold"> Enter username & password </p>
     </div>
 
     <form action="LoginServlet" method="post">
-        <label for="name" class="text-end"> <b> </b> </label><br>
+        <label for="name" class="text-end"> <b> </b> </label>
         <input type="text" id="name" name="name" placeholder="Username"><br>
 
         <label for="password"> <b>  </b> </label><br>
