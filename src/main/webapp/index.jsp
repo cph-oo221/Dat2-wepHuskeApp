@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/Styles.css">
 </head>
 <body>
 <%-- BANNER & TITEL + ONE LINER --%>
@@ -25,29 +26,31 @@
 </div>
 
 <%--  ENTER USERNAME AND PASSWORD FOR LOGIN  --%>
-<div class="text-center mt-3">
-    <br/>
-    <div class="EnterUserAndPass">
-        <p class="fw-bold"> Enter username & password </p>
+<section>
+    <div class="text-center mt-3">
+        <br/>
+        <div class="EnterUserAndPass">
+            <p class="fw-bold"> Enter username & password </p>
+        </div>
+
+        <form action="LoginServlet" method="post">
+            <label for="name" class="text-end"> <b> </b> </label>
+            <input type="text" id="name" name="name" placeholder="Username"><br/>
+
+            <label for="password"> <b>  </b> </label><br/>
+            <input type="password" id="password" name="password" placeholder="Password"><br/>
+            <br/>
+            <input type="submit" class="btn btn-primary loginButton" value="Login" style="width: 200px;">
+        </form>
     </div>
 
-    <form action="LoginServlet" method="post">
-        <label for="name" class="text-end"> <b> </b> </label>
-        <input type="text" id="name" name="name" placeholder="Username"><br>
-
-        <label for="password"> <b>  </b> </label><br>
-        <input type="password" id="password" name="password" placeholder="Password"><br>
-        <br/>
-        <input type="submit" class="btn btn-primary" value="Enter">
-    </form>
-</div>
-
-<%--  LINK TO REGISTER A NEW USER  --%>
-<div class="text-center mt-3">
-    <form action="LoginServlet" method="get">
-        <%--  style="text-decoration: none" <- this removes the line under a link/button     --%>
-        <input type="submit" class="btn btn-link" style="text-decoration: none" value="Register new user">
-    </form>
-</div>
+    <%--  LINK TO REGISTER A NEW USER  --%>
+    <div class="text-center mt-1">
+        <form action="LoginServlet" method="get">
+            <%--  style="text-decoration: none" <- this removes the line under a link/button     --%>
+            <input type="submit" class="btn btn-link" style="text-decoration: none" value="Register new user">
+        </form>
+    </div>
+</section>
 </body>
 </html>
