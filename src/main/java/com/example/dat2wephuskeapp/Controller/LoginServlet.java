@@ -44,7 +44,6 @@ public class LoginServlet extends HttpServlet
         session.setAttribute("bruger", personMap.get(name));
 
         request.getRequestDispatcher("WEB-INF/userPage.jsp").forward(request, response);*/
-
         String name = request.getParameter("name");
         String password = request.getParameter("password");
         String errorMSG = "Error: Your password or username is incorrect";
